@@ -11,14 +11,14 @@ connection.connect( function(error){
     if (error) throw err
 
     console.log('mySQL connected as id: ' + connection.threadId);
-
-    // connection.query("SELECT * FROM `Episodes` WHERE ?", { season: 2 }, function(err, results){
-
-    //     console.log('Got results', results)
-    // });
 })
 
 module.exports = function(app){
+
+    app.get('/', function(req, res){
+
+        res.render("index");
+    })
 
     app.get('/season/:number', function(req, res){
 
