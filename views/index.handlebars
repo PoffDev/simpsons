@@ -1,13 +1,57 @@
 <h1>The Simpsons</h1>
 
-<ul>
+<div class = "contatiner">
+
     {{#each Episodes}}
-        <li>{{this.title}}</li>
+    
+    <div class = "header">
+        <span>{{this.title}}</span>
+    </div>
+
+    <div class = "content">
+        <ul>
+            <li>Episode Number: {{this.number_in_season}}</li>
+            <li>Viewers: {{this.us_viewers_in_millions}}(mil)</li>
+            <li>Rating: {{this.imdb_rating}}</li>
+        </ul>
+    </div>
+
     {{/each}}
-</ul>
+</div>
 
 <script>
     $(document).ready(function(){
-        console.log('hello world');
+
+        $(".content").hide();
+        
+        $(".header").click(function(){
+            $header = $(this);
+            $content = $header.next();
+
+            $content.slideToggle(500, function(){
+
+            })
+        })
     })
 </script>
+
+
+<style>
+    .container {
+    width:100%;
+    border:1px solid #d3d3d3;
+}
+.container div {
+    width:100%;
+}
+.container .header {
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.container .content {
+    display: none;
+    padding : 5px;
+}
+</style>
