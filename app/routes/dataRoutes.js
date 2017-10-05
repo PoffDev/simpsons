@@ -16,7 +16,6 @@ connection.connect( function(error){
 module.exports = function(app){
 
     app.get('/', function(req, res){
-
         res.render("index");
     })
 
@@ -31,7 +30,6 @@ module.exports = function(app){
             res.render("index", {
                 Episodes: response
             })
-
         })
     })
 
@@ -47,6 +45,5 @@ module.exports = function(app){
                 res.json(response);
             }
         );
-
     })
 };
