@@ -8,4 +8,4 @@
     * mySQL
     * Handlebars
 
-Make sure to checkout the build blog post on my [medium](http://www.medium.com/poffdev)
+Make sure to checkout the build blog post on [medium](http://www.medium.com/@poffdev) it will be updated soon. 
