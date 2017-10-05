@@ -1,6 +1,6 @@
-#Simpsons Data
+# Simpsons Data
 
-### Full-Stack web application that utilizes `The Simpsons by the data` data set found on [Kaggle](https://www.kaggle.com/wcukierski/the-simpsons-by-the-data) uploaded to a mySQL server.
+### Full-Stack web application that utilizes 'The Simpsons by the data' data set found on [Kaggle](https://www.kaggle.com/wcukierski/the-simpsons-by-the-data) uploaded to a mySQL server.
 
 * Technologies used
     * HTML/CSS
