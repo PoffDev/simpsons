@@ -1,1 +1,13 @@
 <h1>The Simpsons</h1>
+
+<ul>
+    {{#each Episodes}}
+        <li>{{this.title}}</li>
+    {{/each}}
+</ul>
+
+<script>
+    $(document).ready(function(){
+        console.log('hello world');
+    })
+</script>

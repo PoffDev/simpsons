@@ -23,12 +23,13 @@ module.exports = function(app){
     app.get('/season/:number', function(req, res){
 
         let seasonSearched = req.params.number;
-        console.log('season selected: '+ seasonSearched)
+        connection.query("SELECT * FROM `Episodes` WHERE ?", { season: seasonSearched}, function(error, response){
 
-        connection.query("SELECT * FROM `Episodes` WHERE ?", {
-            season: seasonSearched,
-        }, function(error, response){
-            console.log('results', response);
+            if (error) throw error;
+            res.render("index", {
+                Episodes: response
+            })
+
         })
     })
 }
