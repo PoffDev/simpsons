@@ -2,7 +2,7 @@
 
 <div class = "container">
 
-    {{#each Episodes}}
+    {{#each index}}
     
     <div class = "header">
         <span>{{this.title}}</span>
@@ -20,39 +20,39 @@
     {{/each}}
 </div>
 
-<script>
-    $(document).ready(function(){
-
-        $(".content").hide();
-        
-        $(".header").click(function(){
-            $header = $(this);
-            $content = $header.next();
-
-            $content.slideToggle(500, function(){
-
-            })
-        })
-    })
-</script>
-
-
 <style>
     .container {
-    width:100%;
-    border:1px solid #d3d3d3;
+    width: 100%;
+    border: 1px solid #d3d3d3;
 }
+
 .container div {
-    width:100%;
+    width: 100%;
 }
+
 .container .header {
-    background-color:#d3d3d3;
+    background-color: #d3d3d3;
     padding: 2px;
     cursor: pointer;
     font-weight: bold;
 }
+
 .container .content {
     display: none;
-    padding : 5px;
+    padding: 5px;
 }
 </style>
+
+<script>
+    $(document).ready(function () {
+
+            $(".content").hide();
+
+            $(".header").click(function () {
+                $header = $(this);
+                $content = $header.next();
+                $content.slideToggle(500, function () {
+                })
+            })
+        });
+</script>

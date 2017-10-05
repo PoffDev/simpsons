@@ -28,7 +28,7 @@ module.exports = function(app){
 
             if (error) throw error;
             res.render("index", {
-                Episodes: response
+                index: response
             })
         })
     })
@@ -42,8 +42,22 @@ module.exports = function(app){
 
                 if (error) throw error;
 
-                res.json(response);
+                res.render("episodes", {
+                    episodes: response
+                });
             }
         );
+    })
+
+    app.get('/quotes/:seriesNumber', function (req, res){
+        let searchedNumber = req.params.seriesNumber;
+
+        connection.query('SELECT * FROM `Script` WHERE `episode_id`=? AND `speaking_line`=?', 
+            [searchedNumber, 'true'], function(error, response) {
+
+                if (error) throw error;
+
+                res.json(response);
+        })
     })
 };

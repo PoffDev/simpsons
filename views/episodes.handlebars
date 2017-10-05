@@ -1,0 +1,67 @@
+<div class='episodes'>
+    {{#each episodes}}
+        
+        <div class = 'title'>
+            <h1>{{this.title}}</h1>
+        </div>
+
+        <div class="big" style="background-image: url('{{this.image_url}}')">
+        <!--big picture-->
+        </div>
+
+        <div class="details">
+            <p>id: {{this.id}}: </p>
+            <p>title: {{this.title}} </p>
+            <p>air date: {{this.original_air_date}}</p>
+            <p>production code: {{this.production_code}} </p>
+            <p>season: {{this.season}}</p>
+            <p>number in season: {{this.number_in_season}} </p>
+            <p>number in series: {{this.number_in_series}}</p>
+            <p>viewers in mil: {{this.us_viewers_in_millions}}</p>
+            <p>views: {{this.views}} </p>
+            <p>imdb: {{this.imdb_rating}}</p>
+            <p>imdb votes: {{this.imdb_votes}}</p>
+            <a href='/quotes/{{this.number_in_series}}'>Quotes</a>
+        </div>
+    {{/each}}
+
+</div>
+
+<style>
+    .episodes {
+        font-family: 'Heebo', sans-serif;
+        background-color: #1A82BB;
+        color: #FFD90F;
+        text-align: center;
+        border-style: solid;
+        border-color: #303030;
+        border-width: 10px;
+        border-radius: 5px;
+    }
+    h1{
+        font-size: 600%;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 1%;
+
+    }
+    .big{
+        height: 600px;
+        width: 100%;
+        border-left: none;
+        border-left-width: 0px;
+        border-right: none;
+        border-right-width: 0px;
+        border-top-color:#774F98;
+        border-top-width: 10px;
+        border-bottom-color: #FFD90F;
+        border-bottom-width: 10px;
+        border-style: solid;
+    }
+    p{
+        margin-top: 0;
+    }
+    .details{
+        margin-top: 0;
+    }
+</style>
