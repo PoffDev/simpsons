@@ -10,18 +10,27 @@
         </div>
 
         <div class="details">
-            <p>id: {{this.id}}: </p>
-            <p>title: {{this.title}} </p>
-            <p>air date: {{this.original_air_date}}</p>
-            <p>production code: {{this.production_code}} </p>
-            <p>season: {{this.season}}</p>
-            <p>number in season: {{this.number_in_season}} </p>
-            <p>number in series: {{this.number_in_series}}</p>
-            <p>viewers in mil: {{this.us_viewers_in_millions}}</p>
-            <p>views: {{this.views}} </p>
-            <p>imdb: {{this.imdb_rating}}</p>
-            <p>imdb votes: {{this.imdb_votes}}</p>
-            <a href='/quotes/{{this.number_in_series}}'>Quotes</a>
+            <h2>Season: {{this.season}}, Episode: {{this.number_in_season}}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Air Date</th>
+                        <th>Production Code</th>
+                        <th>Series</th>
+                        <th>Viewers</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{this.original_air_date}}</td>
+                        <td>{{this.production_code}}</td>
+                        <td>{{this.number_in_series}}</td>
+                        <td>{{this.us_viewers_in_millions}}(mil)</td>
+                        <td>{{this.imdb_rating}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     {{/each}}
 
@@ -63,5 +72,23 @@
     }
     .details{
         margin-top: 0;
+        height: 250px;
+    }
+    table{
+        table-layout: auto;
+        border-collapse: collapse;
+        width: 40%;
+        height: 20%;
+        margin-left: 30%;
+    }
+    table, tr, th, td{
+        text-align: center;
+        border-style: solid;
+        border: 5px;
+        border-color: #774F98;
+    }
+
+    td, th{
+        border-style: solid;
     }
 </style>
