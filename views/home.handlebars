@@ -42,12 +42,8 @@
         }
 
         {{#each index}}
-        var episode{{this.id}} = new plotConstructor({{this.season}}, {{this.imdb_rating}})
+        var episode{{this.id}} = new plotConstructor({{this.number_in_series}}, {{this.imdb_rating}})
         {{/each}}
-
-        console.log()
-
-
 
         var ctx = document.getElementById("myChart").getContext('2d');
             var scatterChart = new Chart(ctx, {
@@ -55,7 +51,7 @@
                     data: {
                         datasets: [{
                             label: 'Episode Ratings',
-                                data: episodeArray
+                            data: episodeArray
                         }]
                     },
                     options: {
@@ -64,9 +60,9 @@
                                 type: 'linear',
                                 position: 'bottom',
                                 ticks: {
-                                        max: 29,
+                                        max: 602,
                                         min: 0,
-                                        stepSize: 1
+                                        stepSize: .01
                                 }
                             }],
                             yAxes: [{
@@ -76,7 +72,11 @@
                                     stepSize: 1
                                 }
                             }]
-                        }
+                        },
+                        hover: {
+                                mode: 'nearest',
+                                intersect: true
+                        },
                     }
                 });
                  
