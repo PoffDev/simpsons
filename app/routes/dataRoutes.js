@@ -16,7 +16,15 @@ connection.connect( function(error){
 module.exports = function(app){
 
     app.get('/', function(req, res){
-        res.render("index");
+
+        connection.query("SELECT * FROM Episodes", function(error, response){
+            if (error) throw error;
+            
+            res.render("home", {
+                index: response
+            })
+        })
+        
     })
 
     app.get('/season/:number', function(req, res){

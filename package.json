@@ -18,6 +18,7 @@
   "homepage": "https://github.com/PoffDev/simpsons#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "chart.js": "^2.7.0",
     "express": "^4.16.1",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.10",
